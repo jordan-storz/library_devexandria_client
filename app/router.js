@@ -7,6 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('users');
+  this.route('libraries');
+  this.route('books');
+  this.route('tags');
 });
 
 export default Router;
