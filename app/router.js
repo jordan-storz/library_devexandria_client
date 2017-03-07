@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('libraries');
   this.route('books');
   this.route('tags');
+  this.route('login');
 });
 
 export default Router;

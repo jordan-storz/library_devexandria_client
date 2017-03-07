@@ -1,5 +1,6 @@
-<h1>Library of Devexandria</h1>
 {{#if session.isAuthenticated}}
+  Login: {{model.login}}
   <button {{action 'logout'}}>logout</button>
+{{else}}
+  <button {{action 'login'}}>login</button>
 {{/if}}
-{{outlet}}

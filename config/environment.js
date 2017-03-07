@@ -50,8 +50,7 @@ module.exports = function(environment) {
     sessionServiceName: 'session',
     providers: {
       'github-oauth2': {
-        apiKey: 'f08030876920c6fa41ff',
-        // scope: 'user',
+        apiKey: process.env.GITHUB_CLIENT_ID,
         redirectUri: 'http://localhost:4200'
       }
     }
