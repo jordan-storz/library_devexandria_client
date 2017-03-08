@@ -15,7 +15,7 @@ Router.map(function() {
   this.route('find-user');
 
   this.route('user', function() {
-    this.route('home', { path: '/:username'});
+    this.route('home', { path: '/home/:username'});
     this.route('fetch');
   });
 });
