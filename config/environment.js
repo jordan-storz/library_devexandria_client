@@ -51,7 +51,7 @@ module.exports = function(environment) {
     providers: {
       'github-oauth2': {
         apiKey: process.env.GITHUB_CLIENT_ID,
-        redirectUri: 'http://localhost:4200'
+        redirectUri: 'http://localhost:4200/user/fetch'
       }
     }
   }

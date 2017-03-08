@@ -12,6 +12,12 @@ Router.map(function() {
   this.route('books');
   this.route('tags');
   this.route('login');
+  this.route('find-user');
+
+  this.route('user', function() {
+    this.route('home', { path: '/:username'});
+    this.route('fetch');
+  });
 });
 
 export default Router;
