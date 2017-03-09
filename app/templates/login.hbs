@@ -1,6 +1,24 @@
-{{#if session.isAuthenticated}}
-  Login: {{model.login}}
-  <button {{action 'logout'}}>logout</button>
-{{else}}
-  <button {{action 'login'}}>login</button>
-{{/if}}
+<header>
+  <hgroup id="main-title-headers">
+    <h1 id="small-title" class="main-title">Library of</h1>
+    <h1 id="large-title" class="main-title">Devexandria</h1>
+  </hgroup>
+</header>
+
+<main>
+  <div id="login-button-container">
+    <button {{action 'login'}} id="login-button">login</button>
+  </div>
+  <section id="welcome-info">
+    <h3>A social bookmarking site exclusively for programmers.</h3>
+    <p>
+      In the days of old, the mark of a great scholar / wizard was a grand
+      and expansive library filled with exotic and wise books.  Today, you canvas
+      acheive the same sort of thing by building your own library. Users
+      of LoD can then subscribe to each others' libraries.
+    </p>
+    <p>
+
+    </p>
+  </section>
+</main>
