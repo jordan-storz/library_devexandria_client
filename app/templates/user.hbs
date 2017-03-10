@@ -1,0 +1,8 @@
+<header id="user-index-header">
+  <h3>{{model.currentUser.username}}</h3>
+  <h2>Library of Devexandria</h2>
+  {{#if session.isAuthenticated}}
+    <button {{action 'logout'}}>logout</button>
+  {{/if}}
+</header>
+{{outlet}}

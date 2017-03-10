@@ -13,8 +13,7 @@ Router.map(function() {
   this.route('tags');
   this.route('login');
 
-  this.route('user', function() {
-    this.route('home', { path: '/home/:username'});
+  this.route('user', {path: 'user/:username'}, function() {
   });
 });
 

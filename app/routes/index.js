@@ -5,7 +5,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model() {
     return this.get('store').findRecord('github-user', '#')
       .then(githubUser => {
-        this.transitionTo('user.home', githubUser.get('login'));
+        this.transitionTo('user', githubUser.get('login'));
       });
   }
 });
