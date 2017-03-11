@@ -1,7 +1,11 @@
 <main id="user-index-main">
   <nav>
-    <button class="user-index-nav-btn">Add Book</button>
-    <button class="user-index-nav-btn">Browse Your Library</button>
+    {{#link-to 'user.library.books.add' class="user-index-nav-btn"}}
+      <button class="user-index-nav-btn">Add Book</button>
+    {{/link-to}}
+    {{#link-to 'user.library.books' class="user-index-nav-btn"}}
+      <button class="user-index-nav-btn">Browse Your Library</button>
+    {{/link-to}}
     <button class="user-index-nav-btn">Browse Other Libraries</button>
   </nav>
   {{followee-feed}}

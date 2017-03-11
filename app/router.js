@@ -14,6 +14,11 @@ Router.map(function() {
   this.route('login');
 
   this.route('user', {path: 'user/:username'}, function() {
+    this.route('library', function() {
+      this.route('books', function() {
+        this.route('add');
+      });
+    });
   });
 });
 

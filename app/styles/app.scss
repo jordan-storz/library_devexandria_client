@@ -18,6 +18,10 @@ body {
   }
 }
 
+main {
+  height: 80%;
+}
+
 footer {
   background-color: $background-light;
   color: white;
@@ -149,4 +153,40 @@ main#user-index-main {
   #followee-feed-component {
     margin-left: 4.1rem;
   }
+}
+
+button.books-index-nav-btn {
+  padding: 0.5rem 2rem;
+  border-radius: 10%;
+  margin-bottom: 1.7rem;
+  width: 12rem;
+  cursor: pointer;
+  font-size: 2rem;
+  &:hover {
+    background-color: $background-dark;
+    color: $gold;
+  }
+}
+
+main#user-library-books-index {
+  button {
+    margin-left: 3rem;
+  }
+  nav {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    input {
+      height: 3rem;
+      width: 37rem;
+      font-size: 2.6rem;
+      margin-left: 14rem;
+    }
+  }
+}
+
+.list-books-component {
+  border: 1.3px solid $gold;
+  height: 75%;
+  background-image: url('/assets/images/book-banner.jpg');
 }
