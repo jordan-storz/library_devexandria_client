@@ -1,11 +1,12 @@
-<h5>{{book.title}}</h5>
+<h5>{{truncate book.title limit=33}}</h5>
 <section class="book-main">
   {{#if showingMenu}}
     <nav>
-      <a href="#">Go to URL</a>
+      {{#link-to 'user.library.book' book}} Details {{/link-to}}
+      <a href="{{book.sourceUrl}}" target="_blank">Go to URL</a>
     </nav>
   {{else}}
-    <p class="content">{{book.content}}</p>
+    <p class="content">{{truncate book.content limit=95}}</p>
   {{/if}}
 </section>
 {{list-tags tags=book.tags}}

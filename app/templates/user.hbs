@@ -1,5 +1,7 @@
 <header id="user-index-header">
-  <h3>{{model.currentUser.username}}</h3>
+  {{#link-to 'user.index'}}
+    <h3>{{model.currentUser.username}}</h3>
+  {{/link-to}}
   <h2>Library of Devexandria</h2>
   {{#if session.isAuthenticated}}
     <button {{action 'logout'}}>logout</button>

@@ -18,6 +18,7 @@ Router.map(function() {
       this.route('books', function() {
         this.route('add');
       });
+      this.route('book', {path: '/book/:book_id'});
     });
   });
 });

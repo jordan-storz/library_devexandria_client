@@ -1,9 +1,14 @@
 <main id="user-library-books-index">
   <nav>
-    {{#link-to 'user.library.books.add' class="user-index-nav-btn"}}
-      <button class="books-index-nav-btn">Add Book</button>
-    {{/link-to}}
-    <input type="text" name="search-bookmarks" placeholder="Search">
+    {{#if showBookDetails}}
+      BOOKMARK DETAILS
+    {{else}}
+      {{#link-to 'user.library.books.add' class="user-index-nav-btn"}}
+        <button class="books-index-nav-btn">Add Book</button>
+      {{/link-to}}
+      <input type="text" name="search-bookmarks" placeholder="Search">
+    {{/if}}
+
   </nav>
   {{list-books books=model.books}}
 </main>

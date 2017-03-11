@@ -8,5 +8,14 @@ export default Ember.Route.extend({
       library: currentUser.get('library'),
       books: currentUser.get('library').get('books')
     });
+  },
+  showBookDetails: true,
+  actions: {
+    toggleShowBookDetails() {
+      this.set('showBookDetails', true);
+    },
+    toggleHideBookDetails() {
+      this.set('showBookDetails', false);
+    }
   }
 });
