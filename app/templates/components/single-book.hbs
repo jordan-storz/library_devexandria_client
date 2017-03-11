@@ -1,1 +1,11 @@
-{{yield}}
+<h5>{{book.title}}</h5>
+<section class="book-main">
+  {{#if showingMenu}}
+    <nav>
+      <a href="#">Go to URL</a>
+    </nav>
+  {{else}}
+    <p class="content">{{book.content}}</p>
+  {{/if}}
+</section>
+{{list-tags tags=book.tags}}
