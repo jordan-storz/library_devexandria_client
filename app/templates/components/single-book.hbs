@@ -2,7 +2,7 @@
 <section class="book-main">
   {{#if showingMenu}}
     <nav>
-      {{#link-to 'user.library.book' book}} Details {{/link-to}}
+      {{#link-to 'user.library.book' book.id}} Details {{/link-to}}
       <a href="{{book.sourceUrl}}" target="_blank">Go to URL</a>
     </nav>
   {{else}}

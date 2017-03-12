@@ -1,0 +1,16 @@
+<main id="user-library-book-index">
+  <div class="bookmark-heading">
+    <h2>{{model.book.title}}</h2>
+    <img src="/assets/images/divider.png" alt="">
+  </div>
+  <div class="bookmark-main">
+    {{#if model.book.tags}}
+      <h3>Tags:</h3>
+      {{tag-creator}}
+      {{list-tags tags=model.book.tags largeTags=true}}
+    {{else}}
+      <h3>Add some tags to this book!</h3>
+      {{tag-creator}}
+    {{/if}}
+  </div>
+</main>

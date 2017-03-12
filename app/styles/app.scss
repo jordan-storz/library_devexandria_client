@@ -9,6 +9,10 @@ $gold: rgb(224, 215, 90);
   box-sizing: border-box;
 }
 
+html {
+  height: 100vh;
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
@@ -16,14 +20,20 @@ h1, h2, h3, h4, h5, h6 {
 body {
   background-color: $background-dark;
   font-family: 'Roboto', sans-serif;
-  height: 97vh;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
   >div {
-    height: 96vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 
 main {
-  height: 80%;
+  height: 78%;
+  max-height: 78%;
 }
 
 footer {
@@ -268,4 +278,49 @@ main#user-library-books-index {
       background-color: rgba(106, 115, 263, 1);
     }
   }
+  li.large-tag {
+    font-size: 1.7rem;
+    margin-right: 1rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
+
+main#user-library-book-index {
+  color: #efefef;
+  h2 {
+    text-align: center;
+  }
+  img {
+    width: 37rem;
+    filter: invert(100%);
+  }
+  .bookmark-heading {
+    text-align: center;
+  }
+  .bookmark-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h3 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+  }
+  .tag-creator-component {
+    input {
+      height: 2rem;
+      width: 12rem;
+    }
+    button {
+      height: 2rem;
+      width: 2.2rem;
+      font-size: 1rem;
+      background-color: rgb(70, 149, 240);
+    }
+  }
+}
+
+.tag-creator-component {
+
 }
