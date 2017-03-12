@@ -1,14 +1,11 @@
 <main id="user-library-books-index">
+  {{#filter-content content=model.books properties="title content" as |filteredBooks query|}}
   <nav>
-    {{#if showBookDetails}}
-      BOOKMARK DETAILS
-    {{else}}
-      {{#link-to 'user.library.books.add' class="user-index-nav-btn"}}
-        <button class="books-index-nav-btn">Add Book</button>
-      {{/link-to}}
-      <input type="text" name="search-bookmarks" placeholder="Search">
-    {{/if}}
-
+    {{#link-to 'user.library.books.add' class="user-index-nav-btn"}}
+      <button class="books-index-nav-btn">Add Book</button>
+    {{/link-to}}
+    {{input type="text" name="search-bookmarks" placeholder="Search" value=query}}
   </nav>
-  {{list-books books=model.books}}
+    {{list-books books=filteredBooks query=query}}
+  {{/filter-content}}
 </main>
