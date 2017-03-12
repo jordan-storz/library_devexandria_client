@@ -3,6 +3,10 @@ $background-dark: rgb(27, 30, 39);
 $background-light: rgb(50, 50, 50);
 $gold: rgb(224, 215, 90);
 
+@mixin strip-anchor() {
+  text-decoration: none;
+  color: inherit;
+}
 
 // GLOBAL STYLES
 * {
@@ -58,7 +62,7 @@ footer {
     font-size: 8rem;
   }
   a {
-    text-decoration: none;
+    @include strip-anchor();
   }
 }
 
@@ -115,8 +119,7 @@ header#user-index-header {
     align-self: center;
   }
   a {
-    text-decoration: none;
-    color: inherit;
+    @include strip-anchor;
     align-self: center;
     &:hover {
       color: $gold;
@@ -268,22 +271,60 @@ main#user-library-books-index {
   margin-top: 2rem;
   list-style-type: none;
   display: flex;
-  li {
-    margin-right: 0.5rem;
-    background-color: rgba(106, 165, 263, 1);
-    padding: 0.1rem 0.5rem;
-    border-radius: 10%;
-    cursor: pointer;
-    &:hover {
-      background-color: rgba(106, 115, 263, 1);
-    }
-  }
-  li.large-tag {
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+// @keyframes tilt {
+//   from {}
+//   to {transform: rotate}
+// }
+
+.single-tag-component {
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  background-color: rgba(106, 165, 263, 1);
+  padding: 0.1rem 0.5rem;
+  border-radius: 10%;
+  cursor: pointer;
+  &.large-tag {
     font-size: 1.7rem;
     margin-right: 1rem;
     padding: 0.3rem 0.7rem;
   }
+  &.faded-tag {
+    opacity: 0.6;
+  }
+  &:hover {
+    background-color: rgba(106, 115, 263, 1);
+  }
+  button.x-close {
+    font-size: 0.3rem;
+    display: block;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    border: 0.1rem solid white;
+    position: absolute;
+    margin-left: -1rem;
+    margin-top: -0.6rem;
+    cursor: pointer;
+    -webkit-transition: transform .35s ease-in-out;
+    -moz-transition:transform .35s ease-in-out;
+    -ms-transition:transform .35s ease-in-out;
+    &:hover {
+      transform: rotate(-30deg);
+
+      -webkit-transition: transform .35s ease-in-out;
+      -moz-transition:transform .35s ease-in-out;
+      -ms-transition:transform .35s ease-in-out;
+    }
+  }
+  button.hide-x {
+    display: none;
+  }
 }
+
 
 main#user-library-book-index {
   color: #efefef;
@@ -302,6 +343,17 @@ main#user-library-book-index {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    a {
+      margin-bottom: 2rem;
+      @include strip-anchor();
+      background-color: rgba(143, 190, 1, 1);
+      padding: 1rem;
+      border-radius: 10%;
+      &:hover {
+        background-color: silver;
+        color: $gold;
+      }
+    }
     h3 {
       margin-bottom: 0.7rem;
       font-size: 1.4rem;

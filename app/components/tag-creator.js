@@ -17,6 +17,7 @@ export default Ember.Component.extend({
       console.log('component action');
       let name = this.get('name');
       if (name) {
+        this.set('name', '');
         return this.get('saveTag')(name);
       } else {
         return false;

@@ -1,3 +1,3 @@
-{{#each tags as |tag|}}
-<li class="{{if largeTags "large-tag" ""}}">{{tag.name}}</li>
+{{#each tags as |tag index|}}
+  {{single-tag tag=tag largeTag=largeTags deleteTag=deleteTag}}
 {{/each}}

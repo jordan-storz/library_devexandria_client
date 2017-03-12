@@ -4,11 +4,12 @@
     <img src="/assets/images/divider.png" alt="">
   </div>
   <div class="bookmark-main">
+    <a href="{{model.book.sourceUrl}}" target="_blank">Go to source</a>
     {{#if model.book.tags}}
       <h3>Tags:</h3>
       <small>Note: tags can only be one word!</small>
       {{tag-creator saveTag=(route-action 'saveTag')}}
-      {{list-tags tags=model.book.tags largeTags=true}}
+      {{list-tags tags=model.book.tags largeTags=true deleteTag=(route-action 'deleteTag')}}
     {{else}}
       <h3>Add some tags to this book!</h3>
       {{tag-creator saveTag=(route-action 'saveTag')}}
