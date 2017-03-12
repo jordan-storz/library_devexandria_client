@@ -1,2 +1,6 @@
-<input type="text" name="tagname" placeholder="Add a tag ...">
-<button type="button" name="tag-button">+</button>
+{{input type="text"
+  name="tagname"
+  value=name
+  placeholder="Add a tag ..."
+  action="onEnter" on="enter"}}
+<button type="button" {{action "onEnter"}}>+</button>

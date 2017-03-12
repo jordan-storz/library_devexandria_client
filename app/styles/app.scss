@@ -303,20 +303,27 @@ main#user-library-book-index {
     align-items: center;
     justify-content: center;
     h3 {
-      margin-bottom: 1rem;
+      margin-bottom: 0.7rem;
       font-size: 1.4rem;
+    }
+    small {
+      margin-bottom: 0.7rem;
     }
   }
   .tag-creator-component {
+    display: flex;
+    justify-content: space-between;
     input {
-      height: 2rem;
+      height: 2.2rem;
       width: 12rem;
+      font-size: 2rem;
     }
     button {
-      height: 2rem;
+      height: 2.2rem;
       width: 2.2rem;
       font-size: 1rem;
       background-color: rgb(70, 149, 240);
+      margin-left: 0.8rem;
     }
   }
 }

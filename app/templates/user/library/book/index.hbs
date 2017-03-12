@@ -6,11 +6,12 @@
   <div class="bookmark-main">
     {{#if model.book.tags}}
       <h3>Tags:</h3>
-      {{tag-creator}}
+      <small>Note: tags can only be one word!</small>
+      {{tag-creator saveTag=(route-action 'saveTag')}}
       {{list-tags tags=model.book.tags largeTags=true}}
     {{else}}
       <h3>Add some tags to this book!</h3>
-      {{tag-creator}}
+      {{tag-creator saveTag=(route-action 'saveTag')}}
     {{/if}}
   </div>
 </main>
