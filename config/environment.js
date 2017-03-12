@@ -25,6 +25,7 @@ module.exports = function(environment) {
 
   if (environment === 'development') {
     ENV.APP.HOST = 'http://localhost:3000';
+    const TORII_REDIRECT_URL = 'http://localhost:4200/fetch';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -45,6 +46,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.APP.HOST = 'https://api-lib-dev.herokuapp.com';
+    const TORII_REDIRECT_URL = 'https://library-of-devexandria.firebaseapp.com/fetch';
   }
 
   ENV['torii'] = {
@@ -52,7 +54,7 @@ module.exports = function(environment) {
     providers: {
       'github-oauth2': {
         apiKey: process.env.GITHUB_CLIENT_ID,
-        redirectUri: 'http://localhost:4200/user/fetch'
+        redirectUri: TORII_REDIRECT_URL
       }
     }
   }
