@@ -6,7 +6,9 @@ export default Ember.Component.extend({
   classNameBindings: ['largeTag', 'fadedTag'],
   showX: false,
   mouseEnter() {
-    this.set('showX', true);
+    if (this.get('deletable')) {
+      this.set('showX', true);
+    }
   },
   mouseLeave() {
     this.set('showX', false);

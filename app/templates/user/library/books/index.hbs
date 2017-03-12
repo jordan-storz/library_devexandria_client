@@ -6,6 +6,6 @@
     {{/link-to}}
     {{input type="text" name="search-bookmarks" placeholder="Search" value=query}}
   </nav>
-    {{list-books books=filteredBooks query=query}}
+    {{list-books books=filteredBooks query=query deletable=false}}
   {{/filter-content}}
 </main>
