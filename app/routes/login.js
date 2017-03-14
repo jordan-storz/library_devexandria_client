@@ -4,7 +4,7 @@ import UnauthenticatedRouteMixin from 'ember-simple-auth/mixins/unauthenticated-
 export default Ember.Route.extend(UnauthenticatedRouteMixin, {
   actions: {
     login() {
-      this.get('session').authenticate();
+      this.get('session').authenticate('authenticator:torii', 'github');
     }
   }
 });
