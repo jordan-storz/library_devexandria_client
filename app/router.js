@@ -16,9 +16,12 @@ Router.map(function() {
   this.route('user', {path: 'user/:username'}, function() {
     this.route('library', function() {
       this.route('books', function() {
-        this.route('add');
+        this.route('add', function() {
+          this.route('creating');
+        });
       });
-      this.route('book', {path: '/book/:book_id'}, function() {});
+      this.route('book', {path: '/book/:book_id'}, function() {
+      });
     });
   });
 });

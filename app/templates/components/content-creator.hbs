@@ -1,0 +1,6 @@
+{{#unless creating}}
+  <button type="button" name="button" {{action "startCreating"}}>Add Description</button>
+{{else}}
+  {{textarea name="name" rows="8" cols="80" value=content}}
+  <button type="button" name="button" {{action "submitContent"}}>Submit</button>
+{{/unless}}

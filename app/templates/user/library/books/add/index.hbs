@@ -1,0 +1,10 @@
+<section>
+  <h2>Enter a URL to bookmark!</h2>
+  {{input
+    type="url" placeholder="Enter a URL ..."
+    value=model.sourceUrl
+    action="onSubmit" on="enter"
+  }}
+  <button type="button" name="button" {{action "onSubmit"}}>Submit</button>
+  <p class="form-error">{{errorMessage}}</p>
+</section>

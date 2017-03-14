@@ -1,8 +1,21 @@
+<div class="sub-header">
+  {{#if loading}}
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  {{else}}
+    <h2>Add a bookmark to your library!</h2>
+    <small class="form-error">{{errorMessage}}</small>
+    <form>
+      {{input placeholder="Enter a URL" action="submitBook" on="enter" value=newUrl}}
+      <button type="button" name="button" {{action "submitBook"}}>Submit</button>
+    </form>
+  {{/if}}
+</div>
 <main id="user-index-main">
   <nav>
-    {{#link-to 'user.library.books.add' class="user-index-nav-btn"}}
-      <button class="user-index-nav-btn">Add Book</button>
-    {{/link-to}}
     {{#link-to 'user.library.books' class="user-index-nav-btn"}}
       <button class="user-index-nav-btn">Browse Your Library</button>
     {{/link-to}}

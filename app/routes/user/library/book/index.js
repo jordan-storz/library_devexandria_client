@@ -5,6 +5,12 @@ export default Ember.Route.extend({
     return this.modelFor('user.library.book');
   },
 
+  afterModel() {
+    let book = this.modelFor('user.library.book').book;
+    console.log('after model book');
+    console.log(book.get('content'));
+  },
+
   getBookAndLib() {
     let book = this.modelFor('user.library.book').book;
     let library = this.modelFor('user.library');
@@ -29,6 +35,12 @@ export default Ember.Route.extend({
       tag.get('books').removeObject(book);
       tag.get('libraries').removeObject(library);
       tag.save();
+    },
+
+    updateContent(content) {
+      let book = this.currentModel;
+      book.set('content', content);
+      book.save();
     }
   }
 });
