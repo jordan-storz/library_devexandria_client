@@ -41,6 +41,14 @@ export default Ember.Route.extend({
       let book = this.currentModel;
       book.set('content', content);
       book.save();
+    },
+
+    removeBook() {
+      let {book, library} = this.getBookAndLib();
+      book.get('libraries').removeObject(library);
+      book.save().then(result => {
+        this.transitionTo('user.library.books.index')
+      })
     }
   }
 });
