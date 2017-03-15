@@ -706,3 +706,80 @@ main#library-books-index {
 main#library-book-main {
   border-top: 2px solid $gold;
 }
+
+
+main#library-book-main {
+  color: #efefef;
+  h2 {
+    text-align: center;
+  }
+  img {
+    width: 37rem;
+    filter: invert(100%);
+  }
+  .bookmark-heading {
+    margin-top: 2rem;
+    .heading-buttons {
+      * {
+        display: inline-block;
+      }
+      padding: 0 2rem;
+    }
+    button {
+      background-image: url('/assets/images/library.png');
+      background-size: 1.5rem;
+      background-repeat: no-repeat;
+      background-position: 95% 50%;
+      text-align: left;
+      padding: 0.2rem 2rem;
+      border-radius: 10%;
+      margin-top: 0.5rem;
+      margin-bottom: 1.7rem;
+      width: 10rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      &:hover {
+        background-color: $background-dark;
+        color: $gold;
+      }
+
+    }
+    img {
+      margin-left: 30%;
+    }
+    h2 {
+      margin-left: 25%;
+    }
+  }
+  .bookmark-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    span.description {
+      display: block;
+      width: 55%;
+      align-self: center;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    a {
+      margin-bottom: 2rem;
+      @include strip-anchor();
+      background-color: rgba(143, 190, 1, 1);
+      padding: 1rem;
+      border-radius: 10%;
+      &:hover {
+        background-color: silver;
+        color: $gold;
+      }
+    }
+    h3 {
+      margin-bottom: 0.7rem;
+      font-size: 1.4rem;
+    }
+    small {
+      margin-bottom: 0.7rem;
+    }
+  }
+}

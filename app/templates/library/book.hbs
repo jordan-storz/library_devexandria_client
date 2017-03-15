@@ -2,12 +2,9 @@
   <div class="bookmark-heading">
     <div class="heading-buttons">
       {{#link-to 'user.library.books' class="user-index-nav-btn"}}
-        <button class="user-index-nav-btn">Back To Browsing</button>
+        <button class="user-index-nav-btn">&lt;- Back</button>
       {{/link-to}}
       <h2>{{model.book.title}}</h2>
-      <button type="button" name="button" class="remove-book" {{action "removeBook"}}>
-        Remove
-      </button>
     </div>
     <img src="/assets/images/divider.png" alt="">
   </div>
