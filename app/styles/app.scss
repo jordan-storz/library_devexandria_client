@@ -658,3 +658,47 @@ main#library-books-index {
     height: 3rem;
   }
 }
+
+.sub-header-library {
+  color: #efefef;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  * {
+    display: inline-block;
+  }
+  form {
+    display: flex;
+  }
+  input {
+    width: 18rem;
+    height: 2rem;
+    font-size: 1.8rem;
+    margin-right: 1rem;
+  }
+  h2 {
+    margin-left: 29%;
+    margin-top: 0.3rem;
+  }
+  button {
+    height: 3rem;
+    border-radius: 10%;
+    width: 9rem;
+    font-size: 1rem;
+    background-color: $background-light;
+    border: 5px solid $gold;
+    color: #efefef;
+    cursor: pointer;
+    margin-left: 2rem;
+    &:hover {
+      background-color: rgb(55, 55, 55);
+    }
+  }
+  h2 {
+    margin-bottom: 1rem;
+  }
+  .form-error {
+    color: rgb(232, 82, 51);
+    margin-top: 5rem;
+    position: absolute;
+  }
+}

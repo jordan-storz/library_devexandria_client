@@ -10,7 +10,8 @@
     <button {{action 'logout'}}>logout</button>
   {{/if}}
 </header>
-<div class="sub-header">
-  <h2>{{model.library.user.username}}</h2>
+<div class="sub-header-library">
+  <button class="subscribe-btn" {{action 'subscribeUser'}}>Subscribe to this library</button>
+  <h2>{{model.library.user.username}}'s Library</h2>
 </div>
 {{outlet}}
