@@ -11,7 +11,13 @@
   {{/if}}
 </header>
 <div class="sub-header-library">
-  <button class="subscribe-btn" {{action 'subscribeUser'}}>Subscribe to this library</button>
+  <div class="button-container">
+    {{#link-to 'libraries'}}
+      <button type="button" name="button" class="globe-btn">Libraries</button>
+    {{/link-to}}
+    <button class="subscribe-btn" {{action 'subscribeUser'}}>Subscribe to this library</button>
+  </div>
   <h2>{{model.library.user.username}}'s Library</h2>
+  <div class="flex-hidden"></div>
 </div>
 {{outlet}}
