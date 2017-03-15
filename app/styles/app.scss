@@ -309,7 +309,18 @@ main#user-library-books-index {
   }
 }
 
+.list-tags-component {
+  margin-top: 2rem;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
 .single-bookmark-component {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
   color: white;
   border: 2px solid silver;
   background-color: rgba(0, 0, 0, 0.7);
@@ -330,6 +341,7 @@ main#user-library-books-index {
   }
   nav {
     display: flex;
+    padding-top: 2rem;
     padding-left: 1rem;
     a {
       text-decoration: none;
@@ -343,15 +355,11 @@ main#user-library-books-index {
       }
     }
   }
+  .list-tags-component {
+    margin-bottom: 1rem;
+  }
 }
 
-.list-tags-component {
-  margin-top: 2rem;
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-}
 
 // @keyframes tilt {
 //   from {}
@@ -415,6 +423,9 @@ main#user-library-book-index {
   }
   .bookmark-heading {
     text-align: center;
+    img {
+      margin-top: -2rem;
+    }
     .heading-buttons {
       display: flex;
       justify-content: space-between;
@@ -719,11 +730,17 @@ main#library-book-main {
   }
   .bookmark-heading {
     margin-top: 2rem;
+    text-align: center;
+    img {
+      margin-top: -2rem;
+    }
     .heading-buttons {
-      * {
-        display: inline-block;
-      }
       padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      div.hidden {
+        width: 10rem;
+      }
     }
     button {
       background-image: url('/assets/images/library.png');
@@ -733,7 +750,6 @@ main#library-book-main {
       text-align: left;
       padding: 0.2rem 2rem;
       border-radius: 10%;
-      margin-top: 0.5rem;
       margin-bottom: 1.7rem;
       width: 10rem;
       cursor: pointer;
@@ -742,13 +758,6 @@ main#library-book-main {
         background-color: $background-dark;
         color: $gold;
       }
-
-    }
-    img {
-      margin-left: 30%;
-    }
-    h2 {
-      margin-left: 25%;
     }
   }
   .bookmark-main {
