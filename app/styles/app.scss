@@ -546,3 +546,78 @@ main#user-library-book-index {
     transform: scale(1.0);
   }
 }
+
+main#libraries-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+
+.glance-library-component {
+  padding-top: 1rem;
+  color: white;
+  border: 0.1rem solid $gold;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 12rem;
+  width: 30rem;
+  margin-bottom: 1rem;
+  &:hover {
+    border: 0.3rem solid rgb(249, 234, 111);
+  }
+  h3 {
+    margin-left: 1rem;
+    border-bottom: 0.5px solid silver;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .owner-text {
+    font-size: 0.8rem;
+    margin-right: 1rem;
+  }
+  .list-tags-component {
+    margin-left: 1rem;
+  }
+}
+
+header#libraries-header {
+  background: $background-light;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  color: white;
+  h2 {
+    color: $gold;
+    font-family: 'Tangerine', cursive;
+    font-size: 5rem;
+  }
+  h3 {
+    align-self: center;
+  }
+  a {
+    @include strip-anchor;
+    align-self: center;
+    &:hover {
+      color: $gold;
+    }
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 3rem;
+    align-self: center;
+    padding: 1rem;
+    border-radius: 10%;
+    font-size: 1.2rem;
+    &:hover {
+      background-color: $background-dark;
+      color: $gold;
+    }
+  }
+}

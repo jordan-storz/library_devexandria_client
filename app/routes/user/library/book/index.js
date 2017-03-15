@@ -38,9 +38,14 @@ export default Ember.Route.extend({
     },
 
     updateContent(content) {
-      let book = this.currentModel;
+      let book = this.currentModel.book;
+      console.log('BOOK');
+      console.log(book);
       book.set('content', content);
-      book.save();
+      book.save().then(result => {
+        console.log('SAVE RESULT');
+        console.log(result);
+      });
     },
 
     removeBook() {
