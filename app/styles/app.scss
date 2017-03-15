@@ -621,3 +621,40 @@ header#libraries-header {
     }
   }
 }
+
+main#library-books-index {
+  button {
+    margin-left: 3rem;
+    padding: 0.3rem;
+  }
+  nav {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    input {
+      height: 2rem;
+      width: 37rem;
+      font-size: 1.6rem;
+      margin-left: 14rem;
+    }
+  }
+}
+
+.git-user-info {
+  width: 21rem;
+  height: 2rem;
+  margin-right: -14rem;
+  * {
+    display: inline-block;
+  }
+  img {
+    width: 3rem;
+    flex-grow: 0;
+    margin-right: 1rem;
+  }
+  a {
+    margin-top: 0.7rem;
+    display: flex;
+    height: 3rem;
+  }
+}

@@ -24,7 +24,9 @@ Router.map(function() {
       });
     });
   });
-  this.route('library', {path: 'library/:library_id'});
+  this.route('library', {path: 'library/:library_id'}, function() {
+    this.route('books', function() {});
+  });
 });
 
 export default Router;

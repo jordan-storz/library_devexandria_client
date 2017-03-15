@@ -14,6 +14,7 @@ export default Ember.Route.extend({
   },
   model(params) {
     return Ember.RSVP.hash({
+      gitUser: this.store.findRecord('github-user', '#'),
       currentUser: this.store.queryRecord('user', {username: params.username})
     });
   }

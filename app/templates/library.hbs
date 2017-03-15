@@ -1,7 +1,10 @@
 <header id="user-index-header">
-  {{#link-to 'user.index'}}
-    <h3>{{model.gitUser.login}}</h3>
-  {{/link-to}}
+  <div class="git-user-info">
+    {{#link-to 'user' model.gitUser.login}}
+      <img class="avatar-img" src="{{model.gitUser.avatarUrl}}" alt="">
+      <h3>{{model.gitUser.login}}</h3>
+    {{/link-to}}
+  </div>
   <h2>Library of Devexandria</h2>
   {{#if session.isAuthenticated}}
     <button {{action 'logout'}}>logout</button>

@@ -1,7 +1,10 @@
 <header id="libraries-header">
-  {{#link-to 'user' model.gitUser.login}}
-    <h3>{{model.gitUser.login}}</h3>
-  {{/link-to}}
+  <div class="git-user-info">
+    {{#link-to 'user' model.gitUser.login}}
+      <img class="avatar-img" src="{{model.gitUser.avatarUrl}}" alt="">
+      <h3>{{model.gitUser.login}}</h3>
+    {{/link-to}}
+  </div>
   <h2>Library of Devexandria</h2>
   {{#if session.isAuthenticated}}
     <button {{action 'logout'}}>logout</button>
@@ -12,7 +15,7 @@
 </div>
 <main id="libraries-main">
   {{#each model.libraries as |library|}}
-    {{#link-to 'library' library.id}}
+    {{#link-to 'library.books.index' library.id}}
       {{glance-library library=library}}
     {{/link-to}}
   {{/each}}
