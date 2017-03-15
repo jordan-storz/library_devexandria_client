@@ -26,6 +26,7 @@ Router.map(function() {
   });
   this.route('library', {path: 'library/:library_id'}, function() {
     this.route('books', function() {});
+    this.route('book', {path: '/book/:book_id'});
   });
 });
 

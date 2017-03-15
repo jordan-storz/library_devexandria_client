@@ -1,0 +1,29 @@
+<main id="library-book-main">
+  <div class="bookmark-heading">
+    <div class="heading-buttons">
+      {{#link-to 'user.library.books' class="user-index-nav-btn"}}
+        <button class="user-index-nav-btn">Back To Browsing</button>
+      {{/link-to}}
+      <h2>{{model.book.title}}</h2>
+      <button type="button" name="button" class="remove-book" {{action "removeBook"}}>
+        Remove
+      </button>
+    </div>
+    <img src="/assets/images/divider.png" alt="">
+  </div>
+  <div class="bookmark-main">
+    <span class="description">
+      {{model.book.content}}
+    </span>
+    <a href="{{model.book.sourceUrl}}" target="_blank">Go to source</a>
+    {{#if model.book.tags}}
+      <h3>Tags:</h3>
+      {{list-tags
+        tags=model.book.tags
+        largeTags=true
+      }}
+    {{else}}
+      <h3>No tags...</h3>
+    {{/if}}
+  </div>
+</main>
