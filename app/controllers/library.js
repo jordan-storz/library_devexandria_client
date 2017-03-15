@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
     return this.get('currentUser').getUser();
   }),
 
-  isSubscribed: Ember.computed('currentUserIs', 'user', function() {
+  isSubscribed: Ember.computed('currentUserIs', 'user.followers', function() {
     let followers = this.get('user').get('followers');
     return followers.includes(this.get('currentUserIs'));
   }),
@@ -27,8 +27,6 @@ export default Ember.Controller.extend({
 
   library: Ember.computed('model', function() {
     let {gitUser, library, currentUser} = this.get('model');
-    console.log('currentUser from controller');
-    console.log(currentUser);
     let userId = library.get('user').get('id');
     let user = this.store.peekRecord('user', userId);
 
@@ -37,11 +35,6 @@ export default Ember.Controller.extend({
     // let user = this.store.peekRecord('user', )
   }),
 
-  actions: {
-    logLibrary() {
-      console.log(this.get('library'));
-    }
-  }
 
 
 

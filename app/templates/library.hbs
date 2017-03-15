@@ -19,7 +19,7 @@
       <button class="subscribe-btn is-subscribed">Subscribed</button>
     {{else}}
     {{currentUser.username}}
-      <button class="subscribe-btn" {{action 'logLibrary'}}>Subscribe to this library</button>
+      <button class="subscribe-btn" {{action 'subscribeUser'}}>Subscribe to this library</button>
     {{/if}}
   </div>
   <h2>{{model.library.user.username}}'s Library</h2>
