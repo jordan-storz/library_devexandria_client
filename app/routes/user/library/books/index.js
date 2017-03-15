@@ -5,8 +5,8 @@ export default Ember.Route.extend({
     let currentUser = this.modelFor('user').currentUser;
     return Ember.RSVP.hash({
       currentUser,
-      library: currentUser.get('library'),
-      books: currentUser.get('library').get('books')
+      library: this.modelFor('user.library'),
+      books: this.modelFor('user.library').get('books')
     });
   },
   actions: {

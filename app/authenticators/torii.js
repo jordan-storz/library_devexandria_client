@@ -7,6 +7,7 @@ export default ToriiAuthenticator.extend({
   ajax: Ember.inject.service(),
 
   authenticate() {
+    console.log('LOGGING IN');
     return this._super(...arguments)
       .then(toriiData => {
         const authCode = toriiData.authorizationCode;
@@ -15,9 +16,9 @@ export default ToriiAuthenticator.extend({
 
         return this.get('ajax').request(serverUrl)
           .then(response => {
-            console.log('RESPONSE WITH ACCESS TOKEN');
-            console.log(response);
+
             return {
+              username: response.username,
               access_token: response.token,
               provider: toriiData.provider
             }
