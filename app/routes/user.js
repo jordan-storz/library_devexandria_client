@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   beforeModel(transition) {
-    console.log('PARAMS HERE');
     let paramsUsername = transition.params.user.username;
     this.store.findRecord('github-user', '#')
       .then(githubUser => {

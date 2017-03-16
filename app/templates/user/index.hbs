@@ -23,6 +23,6 @@
       <button class="user-index-nav-btn">Browse Other Libraries</button>
     {{/link-to}}
   </nav>
-  {{followee-feed}}
+  {{followee-feed followees=model.currentUser.followees}}
 </main>
 {{outlet}}

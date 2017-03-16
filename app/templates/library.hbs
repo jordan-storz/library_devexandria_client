@@ -23,6 +23,10 @@
     {{/if}}
   </div>
   <h2>{{model.library.user.username}}'s Library</h2>
-  <div class="flex-hidden"></div>
+  <div class="button-container">
+    {{#if isSubscribed}}
+      <button class="unsubscribe" {{action 'unsubscribeUser'}}>Unsubscribe</button>
+    {{/if}}
+  </div>
 </div>
 {{outlet}}

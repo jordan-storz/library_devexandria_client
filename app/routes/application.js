@@ -9,6 +9,8 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     let token = this.get('session.data.authenticated.access_token');
     let username = this.get('session.data.authenticated.username');
     if (token && username) {
+      console.log('FETCHING USER');
+      console.log(username);
       this.store.queryRecord('user', {username})
         .then(user => {
           this.get('currentUser').loadUser(user);

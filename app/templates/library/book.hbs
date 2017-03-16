@@ -17,6 +17,7 @@
     {{#if model.book.tags}}
       <h3>Tags:</h3>
       {{list-tags
+        library=model.library
         tags=model.book.tags
         largeTags=true
       }}

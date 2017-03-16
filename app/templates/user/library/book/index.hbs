@@ -25,6 +25,7 @@
       <small>Note: tags can only be one word!</small>
       {{tag-creator saveTag=(route-action 'saveTag')}}
       {{list-tags
+        library=model.library
         tags=model.book.tags
         largeTags=true
         deletable=true

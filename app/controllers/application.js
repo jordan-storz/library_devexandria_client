@@ -7,11 +7,6 @@ export default Ember.Controller.extend({
 
   sessionUsername: Ember.computed('session', function() {
     return this.get('session.data.authenticated.username')
-  }),
-
-  sessionUserNameChanged: Ember.observer('session', function() {
-    console.log('USERNAME CHANGED!!!!');
-    console.log(this.get('sessionUsername'));
-  }),
+  })
 
 });

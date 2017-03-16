@@ -6,8 +6,4 @@ export default GitHubUserAdapter.extend(DataAdapterMixin, {
     this._super(...arguments);
   },
   authorizer: 'authorizer:github',
-  // buildURL(model) {
-  //   console.log('BUILD URL');
-  //   console.log(model);
-  // }
 });

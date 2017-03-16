@@ -14,7 +14,6 @@ export default Ember.Component.extend({
 
   actions: {
     onEnter() {
-      console.log('component action');
       let name = this.get('name');
       if (name) {
         this.set('name', '');
@@ -22,9 +21,6 @@ export default Ember.Component.extend({
       } else {
         return false;
       }
-    },
-    onClick() {
-      console.log('CLICK!');
     }
   }
 });

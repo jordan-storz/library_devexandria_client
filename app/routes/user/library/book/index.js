@@ -2,13 +2,14 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.modelFor('user.library.book');
+    return Ember.RSVP.hash({
+      book: this.modelFor('user.library.book').book,
+      library: this.modelFor('user.library')
+    });
   },
 
   afterModel() {
     let book = this.modelFor('user.library.book').book;
-    console.log('after model book');
-    console.log(book.get('content'));
   },
 
   getBookAndLib() {
@@ -29,22 +30,16 @@ export default Ember.Route.extend({
     },
 
     deleteTag(tag) {
-      console.log('DELETING TAG');
-      console.log(tag);
       let {book, library} = this.getBookAndLib();
-      tag.get('books').removeObject(book);
       tag.get('libraries').removeObject(library);
       tag.save();
     },
 
     updateContent(content) {
       let book = this.currentModel.book;
-      console.log('BOOK');
-      console.log(book);
       book.set('content', content);
       book.save().then(result => {
-        console.log('SAVE RESULT');
-        console.log(result);
+        //
       });
     },
 
