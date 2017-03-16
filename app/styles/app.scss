@@ -221,6 +221,13 @@ main#user-index-main {
         background-color: $background-dark;
         color: $gold;
       }
+      &.browse-other {
+        text-align: left;
+        background-image: url('/assets/images/globe.png');
+        background-size: 3rem;
+        background-repeat: no-repeat;
+        background-position: 88% 50%;
+      }
     }
   }
   #followee-feed-component {
