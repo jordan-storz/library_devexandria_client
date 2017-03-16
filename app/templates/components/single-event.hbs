@@ -1,8 +1,10 @@
 <div class="icon-container">
 </div>
 <div class="event-body">
-  <h5>{{eventMessage}}</h5>
+  <div class="event-heading">
+    <h5>{{eventMessage}}</h5>
+    <time>{{moment-from-now event.createdAt}}</time>
+  </div>
   <p>{{event.book.title}}</p>
-  {{list-tags tags=event.book.tags library=event.user.library}}
-  {{event.createdAt}}
+  {{list-tags tags=event.book.tags library=userLibrary}}
 </div>

@@ -837,10 +837,14 @@ main#library-book-main {
 .single-event-component {
   min-height: 6rem;
   width: 95%;
-  // background-color: rgb(200, 248, 248);
   background: linear-gradient(to right bottom, #efefef, rgb(200, 248, 248));
   border-radius: 5%;
   display: flex;
+  margin-bottom: 1rem;
+  &:hover {
+    cursor: pointer;
+    background: linear-gradient(to right bottom, #efefef, $gold);
+  }
   div.icon-container {
     width: 12%;
     display: flex;
@@ -851,16 +855,35 @@ main#library-book-main {
   }
   div.event-body {
     flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    div.event-heading {
+      border-bottom: 1px solid black;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 0.5rem;
+      padding-bottom: 0.6rem;
+      padding-right: 1rem;
+    }
   }
   h5 {
     color: black;
     padding-left: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.1rem;
     font-size: 1rem;
-    border-bottom: 1px solid black;
   }
   p {
     text-align: center;
+    font-weight: bolder;
+  }
+  .list-tags-component {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0.2rem;
+    .single-tag-component {
+      height: 1.3rem;
+      font-size: 1rem;
+      padding: 0.2rem;
+    }
   }
 }
