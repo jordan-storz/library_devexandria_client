@@ -1,0 +1,8 @@
+<div class="icon-container">
+</div>
+<div class="event-body">
+  <h5>{{eventMessage}}</h5>
+  <p>{{event.book.title}}</p>
+  {{list-tags tags=event.book.tags library=event.user.library}}
+  {{event.createdAt}}
+</div>
