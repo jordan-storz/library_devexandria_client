@@ -1,38 +1,40 @@
 <main id="user-library-book-index">
-  <div class="bookmark-heading">
-    <div class="heading-buttons">
-      {{#link-to 'user.library.books' class="user-index-nav-btn"}}
-        <button class="user-index-nav-btn">Back To Browsing</button>
-      {{/link-to}}
-      <h2>{{model.book.title}}</h2>
-      <button type="button" name="button" class="remove-book" {{action "removeBook"}}>
-        Remove
-      </button>
+  <div class="bookmark">
+    <div class="bookmark-heading">
+      <div class="heading-buttons">
+        {{#link-to 'user.library.books' class="user-index-nav-btn"}}
+          <button class="user-index-nav-btn">Back To Browsing</button>
+        {{/link-to}}
+        <img src="/assets/images/divider.png" alt="decoration-line">
+        <button type="button" name="button" class="remove-book" {{action "removeBook"}}>
+          Remove
+        </button>
+      </div>
     </div>
-    <img src="/assets/images/divider.png" alt="">
-  </div>
-  <div class="bookmark-main">
-    <span class="description">
-      {{model.book.content}}
-    </span>
-    <a href="{{model.book.sourceUrl}}" target="_blank">Go to source</a>
-    {{#unless model.book.content}}
-      this book does not have a description! add your own, trailblazer!
-      {{content-creator book=model.book updateContent=(route-action 'updateContent')}}
-    {{/unless}}
-    {{#if model.book.tags}}
-      <h3>Tags:</h3>
-      <small>Note: tags can only be one word!</small>
-      {{tag-creator saveTag=(route-action 'saveTag')}}
-      {{list-tags
-        library=model.library
-        tags=model.book.tags
-        largeTags=true
-        deletable=true
-        deleteTag=(route-action 'deleteTag')}}
-    {{else}}
-      <h3>Add some tags to this book!</h3>
-      {{tag-creator saveTag=(route-action 'saveTag')}}
-    {{/if}}
+    <div class="bookmark-main">
+      <h2>{{model.book.title}}</h2>
+      <span class="description">
+        {{model.book.content}}
+      </span>
+      <a href="{{model.book.sourceUrl}}" target="_blank">Go to source</a>
+      {{#unless model.book.content}}
+        this book does not have a description! add your own, trailblazer!
+        {{content-creator book=model.book updateContent=(route-action 'updateContent')}}
+      {{/unless}}
+      {{#if model.book.tags}}
+        <h3>Tags:</h3>
+        <small>Note: tags can only be one word!</small>
+        {{tag-creator saveTag=(route-action 'saveTag')}}
+        {{list-tags
+          library=model.library
+          tags=model.book.tags
+          largeTags=true
+          deletable=true
+          deleteTag=(route-action 'deleteTag')}}
+      {{else}}
+        <h3>Add some tags to this book!</h3>
+        {{tag-creator saveTag=(route-action 'saveTag')}}
+      {{/if}}
+    </div>
   </div>
 </main>

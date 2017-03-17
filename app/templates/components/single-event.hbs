@@ -1,3 +1,4 @@
+{{#link-to 'library.book' userLibrary.id event.book.id}}
 <div class="icon-container">
 </div>
 <div class="event-body">
@@ -8,3 +9,4 @@
   <p>{{event.book.title}}</p>
   {{list-tags tags=event.book.tags library=userLibrary}}
 </div>
+{{/link-to}}

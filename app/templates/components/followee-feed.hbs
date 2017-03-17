@@ -1,4 +1,15 @@
-<h4>News from Other Libraries</h4>
-{{#each events as |event|}}
-  {{single-event event=event}}
-{{/each}}
+<section class="feed-header">
+  <h4>News from Other Libraries</h4>
+</section>
+{{#if followees}}
+  {{#each events as |event|}}
+    {{single-event event=event}}
+  {{/each}}
+{{else}}
+<section class="feed-main">
+    <section class="info">
+      <h5>Subscribe to Some Libraries!!</h5>
+      <p>This news feed will post events from other libraries so you can keep up with the latest.</p>
+    </section>
+</section>
+{{/if}}

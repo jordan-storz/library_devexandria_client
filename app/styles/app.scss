@@ -52,6 +52,16 @@ footer {
   z-index: 5;
 }
 
+div.login-view {
+  background-image: url('/assets/images/northern-lights.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 90%;
+  main {
+
+  }
+}
+
 #main-title-headers {
   margin-top: 5rem;
   font-family: 'Tangerine', cursive;
@@ -89,13 +99,14 @@ footer {
 }
 
 section#welcome-info {
-  background-color: $background-light;
+  background-color: rgba(50, 50, 50, 0.7);
   color: $gold;
   width: 80%;
-  padding-top: 1rem;
+  padding-top: 2rem;
   padding-bottom: 2rem;
   margin: 0 auto;
   margin-top: 3rem;
+  border-radius: 12%;
   h3 {
     text-align: center;
     font-size: 1.7rem;
@@ -152,11 +163,30 @@ header#user-index-header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  section.feed-main {
+    height: 63%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   h4 {
     text-align: center;
     color: #efefef;
     margin-top: 0.4rem;
     margin-bottom: 1rem;
+  }
+  h5 {
+    font-size: 1.3rem;
+  }
+  section.info {
+    color: black;
+    text-align: center;
+    background: linear-gradient(to left bottom, rgb(195, 211, 201), rgb(139, 170, 149));
+    padding-top: 1rem;
+    p {
+      display: block;
+      padding: 0 5rem;
+    }
   }
 }
 
@@ -481,11 +511,18 @@ main#user-library-book-index {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 2px solid white;
+    width: 55%;
+    margin: 0 auto;
+    padding: 2rem 0;
     span.description {
       display: block;
       width: 55%;
       align-self: center;
       text-align: center;
+      margin-bottom: 2rem;
+    }
+    h2 {
       margin-bottom: 2rem;
     }
     a {
@@ -780,7 +817,8 @@ main#library-book-main {
     margin-top: 2rem;
     text-align: center;
     img {
-      margin-top: -2rem;
+      margin-top: -3rem;
+      margin-bottom: 2rem;
     }
     .heading-buttons {
       padding: 0 2rem;
@@ -813,11 +851,19 @@ main#library-book-main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 2px solid white;
+    padding: 2rem 0;
+    width: 55%;
+    margin: 0 auto;
+    margin-top: -3rem;
     span.description {
       display: block;
       width: 55%;
       align-self: center;
       text-align: center;
+      margin-bottom: 2rem;
+    }
+    h2 {
       margin-bottom: 2rem;
     }
     a {
@@ -848,6 +894,10 @@ main#library-book-main {
   border-radius: 5%;
   display: flex;
   margin-bottom: 1rem;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   &:hover {
     cursor: pointer;
     background: linear-gradient(to right bottom, #efefef, $gold);
