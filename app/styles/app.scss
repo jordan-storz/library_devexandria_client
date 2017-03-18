@@ -57,9 +57,6 @@ div.login-view {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   height: 90%;
-  main {
-
-  }
 }
 
 #main-title-headers {
@@ -614,9 +611,22 @@ main#libraries-main {
   flex-direction: column;
   align-items: center;
   overflow: scroll;
+  img {
+    filter: invert(100%);
+    display: block;
+    margin: 0 auto;
+    margin-top: -8rem;
+    margin-bottom: -8rem;
+  }
+}
+
+div#libraries-sub-header {
+  padding-top: 1rem;
 }
 
 .glance-library-component {
+  background-image: url('/assets/images/woodgrain.jpg');
+  background-size: cover;
   padding-top: 1rem;
   color: white;
   border: 0.1rem solid $gold;
@@ -624,8 +634,8 @@ main#libraries-main {
   flex-direction: column;
   justify-content: flex-start;
   height: 12rem;
-  width: 30rem;
-  margin-bottom: 1rem;
+  width: 40rem;
+  border-top: 6px solid silver;
   &:hover {
     border: 0.3rem solid rgb(249, 234, 111);
   }
