@@ -10,7 +10,15 @@ export default Ember.Route.extend({
       this.store.queryRecord('book', {source_url: sourceUrl}).then(book => {
         book.get('libraries').pushObject(library);
         book.save().then(result => {
-          this.transitionTo('user.library.book', book.id);
+          let event = this.store.createRecord('event', {
+            user: library.get('user'),
+            library: library,
+            book: book,
+            eventType: 'add'
+          });
+          event.save().then(() => {
+            this.transitionTo('user.library.book', book.id);
+          });
         });
       })
     }

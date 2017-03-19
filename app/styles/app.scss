@@ -155,11 +155,13 @@ header#user-index-header {
 
 #followee-feed-component {
   height: 88%;
+  max-height: 47rem;
   border: 2px solid $gold;
-  width: 47%;
+  width: 57%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: scroll;
   section.feed-main {
     height: 63%;
     display: flex;
@@ -904,6 +906,10 @@ main#library-book-main {
   border-radius: 5%;
   display: flex;
   margin-bottom: 1rem;
+  & > a {
+    display: flex;
+    width: 100%;
+  }
   a {
     text-decoration: none;
     color: inherit;
@@ -913,7 +919,7 @@ main#library-book-main {
     background: linear-gradient(to right bottom, #efefef, $gold);
   }
   div.icon-container {
-    width: 12%;
+    width: 15%;
     display: flex;
     background-image: url('/assets/images/book-icon.png');
     background-size: contain;
@@ -935,11 +941,13 @@ main#library-book-main {
   }
   h5 {
     color: black;
-    padding-left: 1rem;
     font-size: 1rem;
   }
+  .event-content {
+    display: flex;
+    justify-content: space-between;
+  }
   p {
-    text-align: center;
     font-weight: bolder;
   }
   .list-tags-component {

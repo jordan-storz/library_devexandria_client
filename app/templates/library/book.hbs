@@ -2,7 +2,7 @@
   <div class="bookmark-heading">
     <div class="heading-buttons">
       {{#link-to 'library.books' class="user-index-nav-btn"}}
-        <button class="user-index-nav-btn">&lt;- {{model.library.user.username}}</button>
+        <button class="user-index-nav-btn">&lt;- {{truncate model.library.user.username limit=7}}</button>
       {{/link-to}}
       <img src="/assets/images/divider.png" alt="">
       <div class="hidden"></div>

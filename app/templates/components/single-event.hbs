@@ -3,10 +3,12 @@
 </div>
 <div class="event-body">
   <div class="event-heading">
-    <h5>{{eventMessage}}</h5>
-    <time>{{moment-from-now event.createdAt}}</time>
+    <h5>{{truncate eventMessage limit=50}}</h5>
+    <time>{{moment-from-now event.updatedAt}}</time>
   </div>
-  <p>{{event.book.title}}</p>
-  {{list-tags tags=event.book.tags library=userLibrary}}
+  <div class="event-content">
+    <p>{{event.book.title}}</p>
+    {{list-tags tags=event.book.tags library=userLibrary}}
+  </div>
 </div>
 {{/link-to}}

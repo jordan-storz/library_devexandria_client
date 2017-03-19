@@ -25,8 +25,8 @@ export default Ember.Component.extend({
   eventMessage: Ember.computed('event.eventType', 'event.user.username', function() {
     let eventType = this.get('event.eventType');
     let username = this.get('event.user.username');
-    let adjective = eventType + 'ed';
+    let adjective = eventType == 'add' ? eventType + 'ed' : eventType + 'd';
     let proposition = eventType == 'add' ? 'to' : 'from';
-    return `${username} ${adjective} a bookmark ${proposition} their library.`
+    return `${username} ${adjective} a bookmark ${proposition} their library.`;
   })
 });
