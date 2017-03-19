@@ -45,22 +45,21 @@ export default Ember.Route.extend({
 
     removeBook() {
       let {book, library} = this.getBookAndLib();
-      this.store.queryRecord('event', {
-        user_id: library.get('user.id'),
-        book_id: book.id,
-        library_id: library.id,
-        event_type: 'add'})
-        .then(event => {
-          console.log('queried for event');
-          console.log(event);
-          event.set('eventType', 'remove');
-          event.save().then(() => {
-            book.get('libraries').removeObject(library);
-            book.save().then(result => {
+      book.get('libraries').removeObject(library);
+      book.save().then(result => {
+        this.store.queryRecord('event', {
+          user_id: library.get('user.id'),
+          book_id: book.id,
+          library_id: library.id,
+          event_type: 'add'})
+          .then(event => {
+            event.set('eventType', 'remove');
+            event.save().then(() => {
               this.transitionTo('user.library.books.index');
             });
-          })
-        });
+          });
+      });
+
     }
   }
 });

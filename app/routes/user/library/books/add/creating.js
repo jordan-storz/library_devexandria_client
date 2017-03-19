@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  eventSocket: Ember.inject.service(),
+
   beforeModel(transition) {
     let library = this.modelFor('user.library');
     let sourceUrl = this.modelFor('user.library.books.add').sourceUrl;
@@ -16,7 +18,11 @@ export default Ember.Route.extend({
             book: book,
             eventType: 'add'
           });
-          event.save().then(() => {
+          event.save().then((result) => {
+            console.log('result of save event');
+            let eventId = result.get('id');
+            let eventMessage = JSON.stringify({eventId});
+            this.get('eventSocket').sendEventMessage(eventMessage);
             this.transitionTo('user.library.book', book.id);
           });
         });

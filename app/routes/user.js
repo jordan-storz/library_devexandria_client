@@ -1,7 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  eventSocket: Ember.inject.service(),
+
   beforeModel(transition) {
+    this.get('eventSocket').init();
     let paramsUsername = transition.params.user.username;
     this.store.findRecord('github-user', '#')
       .then(githubUser => {
