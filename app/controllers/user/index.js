@@ -5,6 +5,7 @@ export default Ember.Controller.extend({
     this._super(...arguments);
     this.set('loading', false);
   },
+  eventSocket: Ember.inject.service(),
   errorMessage: '',
   newUrl: '',
   loading: false,
@@ -31,9 +32,10 @@ export default Ember.Controller.extend({
               book: book,
               eventType: 'add'
             });
-            event.save().then(() => {
-              this.set('newUrl', '');
-              this.set('loading', false);
+            event.save().then((result) => {
+              let eventId = result.get('id');
+              let eventMessage = JSON.stringify({eventId});
+              this.get('eventSocket').sendEventMessage(eventMessage);
               this.transitionToRoute('user.library.book', book.id);
             });
           });
