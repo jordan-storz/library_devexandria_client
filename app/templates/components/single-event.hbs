@@ -1,3 +1,4 @@
+{{#if isAdd}}
 {{#link-to 'library.book' userLibrary.id event.book.id}}
 <div class="icon-container">
 </div>
@@ -8,7 +9,21 @@
   </div>
   <div class="event-content">
     <p>{{event.book.title}}</p>
-    {{list-tags tags=event.book.tags library=userLibrary}}
+      {{list-tags tags=event.book.tags library=userLibrary}}
   </div>
 </div>
 {{/link-to}}
+{{else}}
+<div class="icon-container">
+</div>
+<div class="event-body">
+  <div class="event-heading">
+    <h5>{{truncate eventMessage limit=57}}</h5>
+    <time>{{moment-from-now event.updatedAt}}</time>
+  </div>
+  <div class="event-content">
+    <p>{{event.book.title}}</p>
+      {{reason-display reason=event.removeReason}}
+  </div>
+</div>
+{{/if}}

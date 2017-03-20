@@ -5,11 +5,12 @@ export default Ember.Component.extend({
 
   tagname: 'article',
   classNames: ['single-event-component'],
-  classBindings: ['isAdd', 'isRemove'],
+  classNameBindings: ['isAdd', 'isRemove'],
   isAdd: Ember.computed('event.eventType', function() {
     return this.get('event.eventType') === 'add';
   }),
   isRemove: Ember.computed('eventType', function() {
+    console.log('checking remove prop');
     return this.get('event.eventType') === 'remove';
   }),
   userLibrary: Ember.computed('event.user.id', function() {

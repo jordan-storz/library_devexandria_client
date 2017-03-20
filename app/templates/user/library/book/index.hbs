@@ -6,9 +6,14 @@
           <button class="user-index-nav-btn">Back To Browsing</button>
         {{/link-to}}
         <img src="/assets/images/divider.png" alt="decoration-line">
-        <button type="button" name="button" class="remove-book" {{action "removeBook"}}>
-          Remove
-        </button>
+        {{#if showDeleteReason}}
+          {{remove-reason removeBook=(route-action 'removeBook')}}
+          <button class="placeholder"></button>
+        {{else}}
+          <button type="button" name="button" class="remove-book" {{action "toggleReasonOn"}}>
+            Remove
+          </button>
+        {{/if}}
       </div>
     </div>
     <div class="bookmark-main">

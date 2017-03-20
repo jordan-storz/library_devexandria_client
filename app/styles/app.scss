@@ -457,6 +457,9 @@ main#user-library-books-index {
 
 main#user-library-book-index {
   color: #efefef;
+  .placeholder {
+    visibility: hidden;
+  }
   h2 {
     text-align: center;
   }
@@ -902,10 +905,22 @@ main#library-book-main {
 .single-event-component {
   min-height: 6rem;
   width: 95%;
-  background: linear-gradient(to right bottom, #efefef, rgb(200, 248, 248));
   border-radius: 5%;
   display: flex;
   margin-bottom: 1rem;
+  &.is-add {
+    background: linear-gradient(to right bottom, #efefef, rgb(200, 248, 248));
+    div.icon-container {
+      background-image: url('/assets/images/book-icon.png');
+    }
+  }
+  &.is-remove {
+    background: linear-gradient(to right bottom, #efefef, rgb(229, 81, 49));
+    div.icon-container {
+      background-image: url('/assets/images/trash.png');
+      background-size: 4rem;
+    }
+  }
   & > a {
     display: flex;
     width: 100%;
@@ -921,7 +936,6 @@ main#library-book-main {
   div.icon-container {
     width: 15%;
     display: flex;
-    background-image: url('/assets/images/book-icon.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -950,6 +964,9 @@ main#library-book-main {
   p {
     font-weight: bolder;
   }
+  .reason-display-component {
+    width: 23rem;
+  }
   .list-tags-component {
     margin: 0;
     display: flex;
@@ -960,5 +977,43 @@ main#library-book-main {
       font-size: 1rem;
       padding: 0.2rem;
     }
+  }
+}
+
+.remove-reason-component {
+  position: absolute;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  background-color: #efefef;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  h4 {
+    color: black;
+    margin-bottom: 0.5rem;
+  }
+  button {
+    width: 2rem;
+    flex-grow: 0;
+  }
+}
+
+
+.reason-display-component {
+  p.hover {
+    background-color: rgb(170, 102, 153);
+    color: #efefef;
+    display: inline-block;
+    padding: 0.3rem;
+    border-radius: 5px;
+    border: 2px solid red;
+  }
+  p.reason-body {
+    display: inline-block;
+    background-color: white;
+    padding: 0.2rem 0.7rem 2rem 0.7rem;
+    border: 2px solid black;
+    border-radius: 2px;
   }
 }

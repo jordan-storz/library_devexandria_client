@@ -43,7 +43,7 @@ export default Ember.Route.extend({
       });
     },
 
-    removeBook() {
+    removeBook(reason) {
       let {book, library} = this.getBookAndLib();
       book.get('libraries').removeObject(library);
       book.save().then(result => {
@@ -54,6 +54,7 @@ export default Ember.Route.extend({
           event_type: 'add'})
           .then(event => {
             event.set('eventType', 'remove');
+            event.set('removeReason', reason);
             event.save().then(() => {
               this.transitionTo('user.library.books.index');
             });

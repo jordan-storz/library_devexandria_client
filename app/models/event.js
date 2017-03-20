@@ -5,6 +5,7 @@ export default DS.Model.extend({
   library: DS.belongsTo('library'),
   book: DS.belongsTo('book'),
   eventType: DS.attr('string'),
+  removeReason: DS.attr('string'),
   createdAt: DS.attr('date'),
   updatedAt: DS.attr('date')
 });
