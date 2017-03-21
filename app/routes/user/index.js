@@ -33,15 +33,6 @@ export default Ember.Route.extend({
         this.store.unloadRecord(event);
       }
       this.refresh();
-      // console.log('user index receive event socket msg');
-      // console.log(msg);
-      // let parsedData = JSON.parse(JSON.parse(msg.data));
-      // console.log(typeof parsedData);
-      // let eventId = Number(parsedData["eventId"]);
-      // this.get('store').findRecord('event', eventId)
-      //   .then(event => {
-      //     this.refresh();
-      //   });
     }, this)
   }
 });

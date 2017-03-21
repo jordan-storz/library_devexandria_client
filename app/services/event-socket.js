@@ -1,9 +1,10 @@
 import Ember from 'ember';
+import ENV from '../config/environment';
 
 export default Ember.Service.extend({
   init() {
     this._super(...arguments);
-    const socket = this.get('websockets').socketFor('ws://localhost:3200/');
+    const socket = this.get('websockets').socketFor(ENV.APP.SOCKET_HOST);
 
     socket.on('open', this.openHandler, this);
     socket.on('message', this.messageHandler, this);
