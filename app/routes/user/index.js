@@ -18,8 +18,6 @@ export default Ember.Route.extend({
   },
 
   afterModel(model) {
-    console.log('after model');
-    console.log(model);
     const socket = this.get('eventSocket').get('socketRef');
     socket.on('message', function(msg) {
       let parsedData = JSON.parse(JSON.parse(msg.data));
