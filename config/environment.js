@@ -27,7 +27,7 @@ module.exports = function(environment) {
   if (environment === 'development') {
     ENV.APP.HOST = 'http://localhost:3000';
     ENV.APP.SOCKET_HOST = 'ws://localhost:3200/';
-    var TORII_REDIRECT_URL = 'ws://localhost:4200/fetch';
+    var TORII_REDIRECT_URL = 'http://localhost:4200/fetch';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -48,7 +48,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.APP.HOST = 'https://api-lib-dev.herokuapp.com';
-    ENV.APP.SOCKET_HOST = 'https://blooming-plateau-83076.herokuapp.com';
+    ENV.APP.SOCKET_HOST = 'ws://blooming-plateau-83076.herokuapp.com';
     var TORII_REDIRECT_URL = 'https://library-of-devexandria.firebaseapp.com/fetch';
   }
 
