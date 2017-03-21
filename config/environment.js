@@ -48,7 +48,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.APP.HOST = 'https://api-lib-dev.herokuapp.com';
-    ENV.APP.SOCKET_HOST = 'ws://blooming-plateau-83076.herokuapp.com';
+    ENV.APP.SOCKET_HOST = 'wss://blooming-plateau-83076.herokuapp.com';
     var TORII_REDIRECT_URL = 'https://library-of-devexandria.firebaseapp.com/fetch';
   }
 
