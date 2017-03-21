@@ -7,7 +7,10 @@
         {{/link-to}}
         <img src="/assets/images/divider.png" alt="decoration-line">
         {{#if showDeleteReason}}
-          {{remove-reason removeBook=(route-action 'removeBook')}}
+          {{remove-reason
+            removeBook=(route-action 'removeBook')
+            cancel="toggleReasonOff"
+          }}
           <button class="placeholder"></button>
         {{else}}
           <button type="button" name="button" class="remove-book" {{action "toggleReasonOn"}}>

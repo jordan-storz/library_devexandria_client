@@ -11,5 +11,6 @@ export default Ember.Component.extend({
 
   mouseLeave() {
     this.set('showReason', false);
-  }
+  },
+
 });

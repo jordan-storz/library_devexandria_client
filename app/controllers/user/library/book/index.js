@@ -1,16 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  showDeleteReason: true,
+  showDeleteReason: false,
 
 
   actions: {
     toggleReasonOn() {
       console.log('toggling reason property');
-      this.set('showDeletReason', true);
+      this.set('showDeleteReason', true);
     },
     toggleReasonOff() {
-      this.set('showDeletReason', false);
+      this.set('showDeleteReason', false);
     },
   }
 });

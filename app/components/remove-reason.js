@@ -9,6 +9,9 @@ export default Ember.Component.extend({
     submitRemove() {
       let reasonBody = this.get('reasonBody');
       this.get('removeBook')(reasonBody);
+    },
+    cancelRemove() {
+      this.sendAction('cancel');
     }
   }
 });

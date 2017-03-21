@@ -23,7 +23,9 @@
   </div>
   <div class="event-content">
     <p>{{event.book.title}}</p>
-      {{reason-display reason=event.removeReason}}
+    {{#if event.removeReason}}
+    {{reason-display reason=event.removeReason}}
+    {{/if}}
   </div>
 </div>
 {{/if}}
