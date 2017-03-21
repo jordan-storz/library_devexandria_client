@@ -11,6 +11,7 @@ export default Ember.Component.extend({
   }),
   isRemove: Ember.computed('eventType', function() {
     console.log('checking remove prop');
+    console.log(this.get('event.eventType'));
     return this.get('event.eventType') === 'remove';
   }),
   userLibrary: Ember.computed('event.user.id', function() {

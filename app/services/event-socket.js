@@ -27,6 +27,8 @@ export default Ember.Service.extend({
   },
 
   sendEventMessage(event) {
+    console.log('sending event');
+    console.log(event);
     let jsonEvent = JSON.stringify(event);
     const socket = this.get('socketRef');
     socket.send(jsonEvent);

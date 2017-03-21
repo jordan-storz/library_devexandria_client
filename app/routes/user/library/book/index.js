@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+
+  eventSocket: Ember.inject.service(),
+
   model() {
     return Ember.RSVP.hash({
       book: this.modelFor('user.library.book').book,
@@ -55,7 +58,12 @@ export default Ember.Route.extend({
           .then(event => {
             event.set('eventType', 'remove');
             event.set('removeReason', reason);
-            event.save().then(() => {
+            event.save().then((result) => {
+              let eventId = event.id;
+              console.log('event saved:');
+              console.log(result.get('eventType'));
+              let eventMessage = JSON.stringify({eventId});
+              this.get('eventSocket').sendEventMessage(eventMessage);
               this.transitionTo('user.library.books.index');
             });
           });

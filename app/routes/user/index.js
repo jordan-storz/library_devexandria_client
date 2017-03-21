@@ -19,16 +19,29 @@ export default Ember.Route.extend({
 
   afterModel(model) {
     console.log('after model');
-    console.log(this);
+    console.log(model);
     const socket = this.get('eventSocket').get('socketRef');
     socket.on('message', function(msg) {
       let parsedData = JSON.parse(JSON.parse(msg.data));
-      console.log(typeof parsedData);
       let eventId = Number(parsedData["eventId"]);
-      this.get('store').findRecord('event', eventId)
-        .then(event => {
-          this.refresh();
-        });
+      console.log('eventId');
+      console.log(eventId);
+      let event = this.store.peekRecord('event', eventId);
+      console.log('found event in local storage');
+      console.log(event);
+      if (event) {
+        this.store.unloadRecord(event);
+      }
+      this.refresh();
+      // console.log('user index receive event socket msg');
+      // console.log(msg);
+      // let parsedData = JSON.parse(JSON.parse(msg.data));
+      // console.log(typeof parsedData);
+      // let eventId = Number(parsedData["eventId"]);
+      // this.get('store').findRecord('event', eventId)
+      //   .then(event => {
+      //     this.refresh();
+      //   });
     }, this)
   }
 });
