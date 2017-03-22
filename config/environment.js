@@ -49,7 +49,7 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.APP.HOST = 'https://api-lib-dev.herokuapp.com';
     ENV.APP.SOCKET_HOST = 'wss://peaceful-sands-86456.herokuapp.com/';
-    var TORII_REDIRECT_URL = 'https://library-of-devexandria.com/fetch';
+    var TORII_REDIRECT_URL = 'https://library-of-devexandria.com/index';
   }
 
   ENV['torii'] = {

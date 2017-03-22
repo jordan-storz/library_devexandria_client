@@ -460,6 +460,7 @@ main#user-library-books-index {
 
 main#user-library-book-index {
   color: #efefef;
+  overflow: scroll;
   .placeholder {
     visibility: hidden;
   }
