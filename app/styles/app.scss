@@ -621,6 +621,7 @@ main#libraries-main {
   align-items: center;
   overflow: scroll;
   img {
+    z-index: -2;
     filter: invert(100%);
     display: block;
     margin: 0 auto;
@@ -634,6 +635,7 @@ div#libraries-sub-header {
 }
 
 .glance-library-component {
+  z-index: 200;
   background-image: url('/assets/images/woodgrain.jpg');
   background-size: cover;
   padding-top: 1rem;

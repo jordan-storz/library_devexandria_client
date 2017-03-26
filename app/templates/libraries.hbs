@@ -15,8 +15,8 @@
 </div>
 <main id="libraries-main">
   {{#each model.libraries as |library|}}
+    <img src="/assets/images/library-divider.png" alt="decoration">
     {{#link-to 'library.books.index' library.id}}
-      <img src="/assets/images/library-divider.png" alt="decoration">
       {{glance-library library=library}}
     {{/link-to}}
   {{/each}}
