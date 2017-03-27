@@ -1,7 +1,9 @@
 # Library-client
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This repo is for the Ember client.  You can see the deployed application at www.library-of-devexandria.com.  The client communicates with both a Rails server for DB / Authentication, and a Haskell server for websockets.  I've listed the repos for these services below: (Note: the client doesn't communicate directly with the web scraper service, Rails does)
+* RAILS API: https://github.com/jordan-storz/library_devexandria_api
+* Haskell sockets: https://github.com/jordan-storz/library_dev_sockets
+* Node + Express web scraper: https://github.com/jordan-storz/library_devexandria_scraper
 
 ## Prerequisites
 
@@ -39,9 +41,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
